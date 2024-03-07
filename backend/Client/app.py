@@ -1,9 +1,10 @@
 from utils import isweekday, findbetterprice, getallids, getsingledata, getsingleprice, checkpassword
 from flask import Flask, request, render_template,jsonify
 from classes import WrongPasswordError
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/',methods = ['GET'])
 def index():
@@ -31,7 +32,6 @@ def findthebestprice():
         return jsonify({'error': e}), 401
 
     except KeyError:
-        e = str(e)
         return jsonify({'error': "A requisição não possui todas as informações necessárias e/ou não está no formato correto"}),400
 
 if __name__ == '__main__':

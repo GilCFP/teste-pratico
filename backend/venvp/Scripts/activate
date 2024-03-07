@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Coding\teste-pratico\teste_pratico_dti"
+VIRTUAL_ENV="C:\Coding\teste-pratico\backend\venvp"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
@@ -55,9 +55,9 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    PS1="(teste_pratico_dti) ${PS1:-}"
+    PS1="(venvp) ${PS1:-}"
     export PS1
-    VIRTUAL_ENV_PROMPT="(teste_pratico_dti) "
+    VIRTUAL_ENV_PROMPT="(venvp) "
     export VIRTUAL_ENV_PROMPT
 fi
 

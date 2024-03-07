@@ -4,7 +4,7 @@ import json
 url = "http://127.0.0.1:5000/api/search"
 
 payload = {
-    'day': '60',
+    'day': '6s',
     'month': '03',
     'year': '2024',
     'quantity': {'little': 10, 'big': 5},

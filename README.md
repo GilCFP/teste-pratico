@@ -1,4 +1,4 @@
-# teste-pratico <p>
+# Teste prático <p>
 <h2>Back-End</h2>
 <h3>Banco de dados</h3>
 Iniciei criando o banco de dados e optei por utilizar CSV, já que os dados a serem utilizados são de cunho público e de escala pequena, visto que a aplicação desse projeto se enquadra a apenas um usuário e os petshops próximos à sua localização não podem alcançar números expressivos. Seria possível modelar um banco de dados SQL para essa aplicação porém eu optei por não fazê-lo visto que essa solução performa bem e demanda menos code time<p>

@@ -60,6 +60,11 @@ Sendo assim esses são os arquivos presentes dentro do meu diretório Client:<p>
 - #### app.py:
   - Nesse arquivo constam as rotas do Flask, framework que utilizei, com API's RESTful. No momento só foi implementada uma, responsável por encontrar o estabelecimento com o melhor preço, porém da forma que o código foi separado fica é possível e rápida a implementação de novas API's caso seja necessário no futuro. Por exemplo, se o cliente quiser adicionar uma loja nova que abriu na região ou deletar uma que fechou ou até mesmo atualizar os preços isso pode ser implementado. Além disso, nessa parte do programa também são tratadas as exceções e devolve códigos HTTP adequados a cada caso na response.
 
+```python
+return findbetterprice([getsingleprice(id = id ,weekday= isweekday(day = data['day'], month = data['month'], year=data['year']), quantity= data["quantity"]) for id in getallids()])
+```
+Esse bloco de código retorna o melhor petshop e o melhor preço dentro de um objeto. Ele itera por cada Id no banco de dados e calcula o preço para esse id, após isso é selecionado o melhor preço e retornado isso.
+
 ## 5. Front-End
 Para o front end foi utilizado React como demandado e o UX e UI feito foi simples, já que a aplicação não apresenta muitos recursos. No front também existe a verificação dos dados fornecidos pelo usuário impedindo-o de fornecer dados errados e a utilização de uma senha para comunicação com a api, para que ela não seja consumada por pessoas não autorizadas. Vale mencionar que esse é o meu primeiro contato com React, logo foi desafiador aprender e criar de forma rápida.
 

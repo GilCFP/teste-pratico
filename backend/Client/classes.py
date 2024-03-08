@@ -3,7 +3,7 @@ class data:
 
     def __init__(self,id: int, name : str, priceweekdays : Dict[str, float], priceweekend : Dict[str, float], distance : float,percentage : str):
 
-        self.name : float = name
+        self.name : str = name
         self.distance : float = distance
         self.price = {
             "weekdays": {

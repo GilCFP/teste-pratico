@@ -17,7 +17,7 @@ O usuário abre a página inicial e nela consta um formulário, no qual ele forn
 
 ## 3. Implementação
 1. Inicializando backend
-   1.1. Clone esse repositório
+   1. Clone esse repositório
    2.  No seu terminal, inicialize o ambiente virtual que se encontra no diretório backend/venvp utilizando o script activate dentro de backend/venvp/Scripts
    3.  No ambiente virtual, navegue até o dir "backend/client"
    4.  Já na pasta backend, insira o comando "flask run"
@@ -29,6 +29,7 @@ O usuário abre a página inicial e nela consta um formulário, no qual ele forn
    3. O frontend deve ser iniciado em local host na porta 3000
 
 ## 4. Back-End
+O backend foi feito em python, organizado de forma modular para facilitar manutenções, seguindo os principios SOLID e tipado para otimizar os gastos de memória.
 
 ### 4.1. Banco de dados
 Iniciei criando o banco de dados e optei por utilizar CSV, já que os dados a serem utilizados são de cunho público e de escala pequena, visto que a aplicação desse projeto se enquadra a apenas um usuário e os petshops próximos à sua localização não podem alcançar números expressivos. Seria possível modelar um banco de dados SQL para essa aplicação porém eu optei por não fazê-lo visto que essa solução performa bem e demanda menos code time.<p>
@@ -40,8 +41,8 @@ Dentro da pasta DB existem 3 arquivos petshop.csv, pricewkday.csv, pricewknd.csv
 Escolhi fazer essa abordagem pois tratar os dados dessa forma relacional com o ID de cada loja é eficiente para fazer buscas e possibilita em uma implementação futura a adição de mais lojas e a alteração dos preços das já cadastradas.<p>
 
 ### 4.2. Client
-Após a criação do banco de dados modulei o meu código de forma que ficasse organizado e tentei seguir o SOLID à risca.<p>
-Sendo assim esses são os arquivos presentes dentro do meu diretório Client:<p>
+
+Nesse diretório estão presentes os módulos e o app que faz o host do servidor:<p>
 
 - #### db.py:
   - Esse arquivo armazena todas as funções que se comunicam diretamente com o banco de dados e toda a configuração de path para que opere corretamente. Existe duas funções nesse script getsingledata() e getallids(). A primeira recebe como parametro um id e retorna todos os dados referentes à ele no objeto data, já a segunda retorna uma lista de strings com todos os ids presentes no banco.
@@ -58,7 +59,7 @@ Sendo assim esses são os arquivos presentes dentro do meu diretório Client:<p>
     Nessas funções existem raises para as exepctions, que são tratadas posteriormente. A função findbetterprice funciona utilizando a ordenação nativa do python e eu não considero que isso causará algum problema de performance já que o banco de dados não é extenso.
 
 - #### app.py:
-  - Nesse arquivo constam as rotas do Flask, framework que utilizei, com API's RESTful. No momento só foi implementada uma, responsável por encontrar o estabelecimento com o melhor preço, porém da forma que o código foi separado fica é possível e rápida a implementação de novas API's caso seja necessário no futuro. Por exemplo, se o cliente quiser adicionar uma loja nova que abriu na região ou deletar uma que fechou ou até mesmo atualizar os preços isso pode ser implementado. Além disso, nessa parte do programa também são tratadas as exceções e devolve códigos HTTP adequados a cada caso na response.
+  - Nesse arquivo constam as rotas do Flask, framework que utilizei, com API's RESTful. Somente uma foi implementada, responsável por encontrar o estabelecimento com o melhor preço, porém da forma que o código foi separado fica é possível e rápida a implementação de novas API's caso seja necessário no futuro. Por exemplo, se o cliente quiser adicionar uma loja nova que abriu na região ou deletar uma que fechou ou até mesmo atualizar os preços isso pode ser implementado. Além disso, nessa parte do programa também são tratadas as exceções e devolve códigos HTTP adequados a cada caso na response.
 
 ## 5. Front-End
 Para o front end foi utilizado React como demandado e o UX e UI feito foi simples, já que a aplicação não apresenta muitos recursos. No front também existe a verificação dos dados fornecidos pelo usuário impedindo-o de fornecer dados errados e a utilização de uma senha para comunicação com a api, para que ela não seja consumada por pessoas não autorizadas. Vale mencionar que esse é o meu primeiro contato com React, logo foi desafiador aprender e criar de forma rápida.

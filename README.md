@@ -64,7 +64,7 @@ Nesse diretório estão presentes os módulos e o app que faz o host do servidor
 ```python
 return findbetterprice([getsingleprice(id = id ,weekday= isweekday(day = data['day'], month = data['month'], year=data['year']), quantity= data["quantity"]) for id in getallids()])
 ```
-Esse bloco de código retorna o melhor petshop e o melhor preço dentro de um objeto. Ele itera por cada Id no banco de dados e calcula o preço para esse id, após isso é selecionado o melhor preço e retornado isso.
+Esse bloco de código retorna o melhor petshop e o melhor preço dentro de um JSON. Ele itera por cada ID no banco de dados e calcula o preço para esse id, após isso é selecionado o melhor preço e retornado isso.
 
 ## 5. Front-End
 Para o front end foi utilizado React como demandado e o UX e UI feito foi simples, já que a aplicação não apresenta muitos recursos. No front também existe a verificação dos dados fornecidos pelo usuário impedindo-o de fornecer dados errados e a utilização de uma senha para comunicação com a api, para que ela não seja consumada por pessoas não autorizadas. Vale mencionar que esse é o meu primeiro contato com React, logo foi desafiador aprender e criar de forma rápida.

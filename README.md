@@ -1,4 +1,8 @@
 # Teste prático <p>
+<h2>Resumo</h2>
+Para o back end foi utilizado python, com o framework Flask APIs RESTfull. No front foi utilizado react e o banco de dados foi organizado em arquivos CSV.
+<h2>Utilização</h2>
+O usuário abre a página inicial e nela consta um formulário, no qual ele fornecerá os dados(data, quantidade de cães pequenos, quantidade de cães grandes), após pressionar enviar aparecerá abaixo do formulário o nome do melhor Pet shop e o preço total.
 <h2>Back-End</h2>
 <h3>Banco de dados</h3>
 Iniciei criando o banco de dados e optei por utilizar CSV, já que os dados a serem utilizados são de cunho público e de escala pequena, visto que a aplicação desse projeto se enquadra a apenas um usuário e os petshops próximos à sua localização não podem alcançar números expressivos. Seria possível modelar um banco de dados SQL para essa aplicação porém eu optei por não fazê-lo visto que essa solução performa bem e demanda menos code time<p>
